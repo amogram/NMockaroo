@@ -1,19 +1,9 @@
-[![NuGet](https://img.shields.io/nuget/dt/NMockaroo.svg?style=flat-square)](https://www.nuget.org/packages/NMockaroo/)
-[![Build Status](https://img.shields.io/appveyor/ci/amogram/nmockaroo/master.svg?style=flat-square](AppVeyor Link)
-[![Code Coverage](#)](#)
+[![Build Status](https://img.shields.io/appveyor/ci/amogram/nmockaroo/master.svg?style=flat-square)](https://ci.appveyor.com/project/amogram/nmockaroo)
 
 # NMockaroo
 
 NMockaroo is a little library that provides an easy way for you to generate mock data based on your C# objects using the Mockaroo API.
 
-
-## Getting Started
-
-NMockaroo is available on NuGet.
-
-```
-Install-Package NMockaroo
-```
 
 ## Example Usage
 
