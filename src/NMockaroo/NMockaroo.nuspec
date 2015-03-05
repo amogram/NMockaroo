@@ -12,6 +12,6 @@
     <tags>mockaroo mock nmockaroo</tags>
   </metadata>
   <files>
-     <file src="..\src\NMockaroo\bin\Release\NMockaroo.dll" target="lib\net40\" />
+     <file src="bin\Release\NMockaroo.dll" target="lib\net40\" />
   </files>
 </package>
