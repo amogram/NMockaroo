@@ -1,3 +1,4 @@
+[![endorse](https://api.coderwall.com/amogram/endorsecount.png)](https://coderwall.com/amogram) 
 [![Build Status](https://img.shields.io/appveyor/ci/amogram/nmockaroo/master.svg?style=flat-square)](https://ci.appveyor.com/project/amogram/nmockaroo)
 
 # NMockaroo
