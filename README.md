@@ -79,3 +79,7 @@ P.S. A huge thanks to [Mockaroo](https://mockaroo.com), without which this libra
 Copyright © 2015 Andrew McCaughan
 
 Distributed under the [MIT License](http://en.wikipedia.org/wiki/MIT_License)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/amogram/nmockaroo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
