@@ -20,6 +20,8 @@ namespace NMockaroo
         private const string MockarooApiUrl = @"http://www.mockaroo.com/api/generate.json?key={0}&count={1}";
         private readonly string _apiKey;
 
+        public WebProxy Proxy { get; set; }
+
         public MockarooClient(string apiKey)
         {
             if (string.IsNullOrEmpty(apiKey))
@@ -34,8 +36,10 @@ namespace NMockaroo
         {
             IEnumerable<T> data;
             var request = CreateRequest<T>(count);
+            var handler = new HttpClientHandler();
+            handler.Proxy = Proxy;
 
-            using (var client = new HttpClient())
+            using (var client = new HttpClient(handler))
             {
                 var response = client.SendAsync(request).Result;
                 var responseContent = response.Content.ReadAsStringAsync().Result;
