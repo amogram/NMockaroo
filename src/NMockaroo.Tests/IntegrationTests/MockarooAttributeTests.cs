@@ -133,10 +133,20 @@ namespace NMockaroo.Tests.IntegrationTests
         public void GetData_ReturnsFormula()
         {
             var mockaroo = new MockarooClient(_apiKey);
-            var fooFormulas = mockaroo.GetData<FooFormula>(10).ToList();
+            var fooFormulas = mockaroo.GetData<FooFormula>(1).ToList();
 
-            Assert.AreEqual(fooFormulas.Count(), 10);
+            Assert.AreEqual(fooFormulas.Count(), 1);
             Assert.AreEqual("hello world", fooFormulas[0].Concatenated);
+        }
+
+        [Test]
+        public void GetData_ReturnsOneOrZeroItems()
+        {
+            var mockaroo = new MockarooClient(_apiKey);
+            var fooFormulas = mockaroo.GetData<FooFormula>(0).ToList();
+            Assert.AreEqual(fooFormulas.Count(), 0);
+            fooFormulas = mockaroo.GetData<FooFormula>(1).ToList();
+            Assert.AreEqual(fooFormulas.Count(), 1);
         }
 
         [Test]
