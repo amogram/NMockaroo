@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\MockarooFormulaAttribute.cs" />
     <Compile Include="Attributes\MockarooCustomListAttribute.cs" />
     <Compile Include="Attributes\MockarooDatasetColumnAttribute.cs" />
     <Compile Include="Attributes\MockarooDateAttribute.cs" />
