@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fakes\FooFormula.cs" />
     <Compile Include="Fakes\FooBar.cs" />
     <Compile Include="Fakes\FooMoney.cs" />
     <Compile Include="Fakes\FooNumbers.cs" />

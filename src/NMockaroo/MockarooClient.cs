@@ -20,6 +20,8 @@ namespace NMockaroo
         private const string MockarooApiUrl = @"http://www.mockaroo.com/api/generate.json?key={0}&count={1}";
         private readonly string _apiKey;
 
+        public WebProxy Proxy { get; set; }
+
         public MockarooClient(string apiKey)
         {
             if (string.IsNullOrEmpty(apiKey))
@@ -32,10 +34,15 @@ namespace NMockaroo
 
         public IEnumerable<T> GetData<T>(int count)
         {
+            if (count == 0)
+                return new T[0].AsEnumerable<T>();
+
             IEnumerable<T> data;
             var request = CreateRequest<T>(count);
+            var handler = new HttpClientHandler();
+            handler.Proxy = Proxy;
 
-            using (var client = new HttpClient())
+            using (var client = new HttpClient(handler))
             {
                 var response = client.SendAsync(request).Result;
                 var responseContent = response.Content.ReadAsStringAsync().Result;
@@ -45,7 +52,12 @@ namespace NMockaroo
                     throw new MockarooException(responseContent);
                 }
 
-                data = JsonConvert.DeserializeObject<IEnumerable<T>>(responseContent);
+
+
+                if(count == 1)
+                    data = new T[] { JsonConvert.DeserializeObject<T>(responseContent) }.AsEnumerable();
+                else
+                    data = JsonConvert.DeserializeObject<IEnumerable<T>>(responseContent);
             }
 
             return data;
@@ -80,7 +92,7 @@ namespace NMockaroo
 
         private IEnumerable<Dictionary<string, object>> GetFields<T>()
         {
-            var fields = typeof (T).GetProperties();
+            var fields = typeof(T).GetProperties();
             return fields.Select(GetFieldMetadata);
         }
 
@@ -119,10 +131,10 @@ namespace NMockaroo
 
         private static object GetValueOrArray(CustomAttributeTypedArgument argument)
         {
-            if (argument.Value.GetType() == typeof (ReadOnlyCollection<CustomAttributeTypedArgument>))
+            if (argument.Value.GetType() == typeof(ReadOnlyCollection<CustomAttributeTypedArgument>))
             {
                 return (
-                    from cataElement in (ReadOnlyCollection<CustomAttributeTypedArgument>) argument.Value
+                    from cataElement in (ReadOnlyCollection<CustomAttributeTypedArgument>)argument.Value
                     select cataElement.Value.ToString()
                     ).ToArray();
             }

@@ -130,6 +130,26 @@ namespace NMockaroo.Tests.IntegrationTests
         }
 
         [Test]
+        public void GetData_ReturnsFormula()
+        {
+            var mockaroo = new MockarooClient(_apiKey);
+            var fooFormulas = mockaroo.GetData<FooFormula>(1).ToList();
+
+            Assert.AreEqual(fooFormulas.Count(), 1);
+            Assert.AreEqual("hello world", fooFormulas[0].Concatenated);
+        }
+
+        [Test]
+        public void GetData_ReturnsOneOrZeroItems()
+        {
+            var mockaroo = new MockarooClient(_apiKey);
+            var fooFormulas = mockaroo.GetData<FooFormula>(0).ToList();
+            Assert.AreEqual(fooFormulas.Count(), 0);
+            fooFormulas = mockaroo.GetData<FooFormula>(1).ToList();
+            Assert.AreEqual(fooFormulas.Count(), 1);
+        }
+
+        [Test]
         public void GetData_ReturnsValidRegex()
         {
             const string regexPattern = @"Aa{3}h{3,15}!";
