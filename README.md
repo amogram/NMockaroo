@@ -1,5 +1,6 @@
 [![endorse](https://api.coderwall.com/amogram/endorsecount.png)](https://coderwall.com/amogram) 
 [![Build Status](https://img.shields.io/appveyor/ci/amogram/nmockaroo/master.svg?style=flat-square)](https://ci.appveyor.com/project/amogram/nmockaroo)
+[![Version](https://img.shields.io/nuget/v/NMockaroo.svg?style=flat-square)](https://www.nuget.org/packages?q=NMockaroo)
 
 # NMockaroo
 
@@ -13,10 +14,10 @@ Suppose you have a Person object like this:
 ```
 public class Person
 {
-	public string FirstName {get;set;}
-    public string LastName {get;set;}
-    public string Email {get;set;}
-    public string Role {get;set;}
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Email { get; set; }
+    public string Role { get; set; }
 }
 ```
 
