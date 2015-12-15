@@ -1,6 +1,7 @@
 [![endorse](https://api.coderwall.com/amogram/endorsecount.png)](https://coderwall.com/amogram) 
 [![Build Status](https://img.shields.io/appveyor/ci/amogram/nmockaroo/master.svg?style=flat-square)](https://ci.appveyor.com/project/amogram/nmockaroo)
 [![Version](https://img.shields.io/nuget/v/NMockaroo.svg?style=flat-square)](https://www.nuget.org/packages?q=NMockaroo)
+[![Nuget Downloads](https://img.shields.io/nuget/dt/NMockaroo.svg)](https://img.shields.io/nuget/dt/NMockaroo.svg)
 
 # NMockaroo
 
