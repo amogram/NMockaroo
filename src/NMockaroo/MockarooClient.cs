@@ -18,6 +18,8 @@ namespace NMockaroo
     public class MockarooClient
     {
         private const string MockarooApiUrl = @"http://www.mockaroo.com/api/generate.json?key={0}&count={1}";
+        private const string MockarooSchemaApiUrl = @"http://www.mockaroo.com/api/generate.json?key={0}&count={1}&schema={2}";
+
         private readonly string _apiKey;
 
         public WebProxy Proxy { get; set; }
@@ -54,7 +56,7 @@ namespace NMockaroo
 
 
 
-                if(count == 1)
+                if (count == 1)
                     data = new T[] { JsonConvert.DeserializeObject<T>(responseContent) }.AsEnumerable();
                 else
                     data = JsonConvert.DeserializeObject<IEnumerable<T>>(responseContent);
@@ -62,6 +64,39 @@ namespace NMockaroo
 
             return data;
         }
+
+
+        public IEnumerable<T> GetSchemeData<T>(int count, string schemeName)
+        {
+            if (count == 0)
+                return new T[0].AsEnumerable<T>();
+
+            IEnumerable<T> data;
+            var request = CreateSchemeRequest<T>(count, schemeName);
+            var handler = new HttpClientHandler();
+            handler.Proxy = Proxy;
+
+            using (var client = new HttpClient(handler))
+            {
+                var response = client.SendAsync(request).Result;
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    throw new MockarooException(responseContent);
+                }
+
+
+
+                if (count == 1)
+                    data = new T[] { JsonConvert.DeserializeObject<T>(responseContent) }.AsEnumerable();
+                else
+                    data = JsonConvert.DeserializeObject<IEnumerable<T>>(responseContent);
+            }
+
+            return data;
+        }
+
 
         private HttpRequestMessage CreateRequest<T>(int count)
         {
@@ -90,6 +125,20 @@ namespace NMockaroo
             return request;
         }
 
+        private HttpRequestMessage CreateSchemeRequest<T>(int count, string schemaName)
+        {
+            var url = string.Format(MockarooSchemaApiUrl, _apiKey, count, schemaName);
+
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(url)
+            };
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            return request;
+        }
+
         private IEnumerable<Dictionary<string, object>> GetFields<T>()
         {
             var fields = typeof(T).GetProperties();
@@ -106,12 +155,16 @@ namespace NMockaroo
 
                 if (customAttributeData.Any())
                 {
+
+
                     foreach (
                         var data in
                             customAttributeData.Where(data => data.NamedArguments != null && data.NamedArguments.Any()))
                     {
                         if (data.NamedArguments != null)
                         {
+                            //field.CustomAttributes.First().NamedArguments.First().MemberName                    
+
                             foreach (var arg in data.NamedArguments)
                             {
                                 if (fieldData == null)
