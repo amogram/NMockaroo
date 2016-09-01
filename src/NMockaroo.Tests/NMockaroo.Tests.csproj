@@ -53,6 +53,7 @@
     <Compile Include="Fakes\FooBar.cs" />
     <Compile Include="Fakes\FooMoney.cs" />
     <Compile Include="Fakes\FooNumbers.cs" />
+    <Compile Include="Fakes\FooSchema.cs" />
     <Compile Include="Fakes\FooWebsite.cs" />
     <Compile Include="Fakes\FooDist.cs" />
     <Compile Include="Fakes\FooSentences.cs" />
