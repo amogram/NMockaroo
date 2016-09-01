@@ -14,7 +14,7 @@ namespace NMockaroo.Tests.UnitTests
         [TestFixtureSetUp]
         public void Init()
         {
-            ApiKey = "1b82a430";
+            ApiKey = "PUT YOUR KEY HERE";
             NumberOfInstances = 1;
 
         }
