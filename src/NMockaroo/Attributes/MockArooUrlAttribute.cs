@@ -3,7 +3,8 @@ using System.ComponentModel;
 namespace NMockaroo.Attributes
 {
     /// <summary>
-    ///     Represents the Mockaroo Url type
+    /// Represents the Mockaroo Url type
+    /// <see cref="http://mockaroo.com/api/docs#type_url"/>
     /// </summary>
     public class MockArooUrlAttribute : MockarooInfoAttribute
     {

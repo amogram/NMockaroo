@@ -2,6 +2,11 @@
 {
     public static class DataTypes
     {
+        public const string AppBundleID = "App Bundle ID";
+        public const string AppName = "App Name";
+        public const string AppVersion = "App Version";
+        public const string Avatar = "Avatar";
+        public const string Base64ImageUrl = "Base64 Image URL";
         public const string BitcoinAddress = "Bitcoin Address";
         public const string Blank = "Blank";
         public const string Boolean = "Boolean";
@@ -21,6 +26,7 @@
         public const string DrugCompany = "Drug Company";
         public const string DrugNameBrand = "Drug Name (Brand)";
         public const string DrugNameGeneric = "Drug Name (Generic)";
+        public const string DummyImageUrl = "Dummy Image URL";
         public const string EmailAddress = "Email Address";
         public const string Encrypt = "Encrypt";
         public const string FamilyNameChinese = "Family Name (Chinese)";
@@ -47,22 +53,26 @@
         public const string ICD9ProcedureCode = "ICD9 Procedure Code";
         public const string IPAddressV4 = "IP Address v4";
         public const string IPAddressV6 = "IP Address v6";
+        public const string IPAddressV6Cidr = "IP Address v6 CIDR";
         public const string ISBN = "ISBN";
         public const string JobTitle = "Job Title";
         public const string JsonArray = "JSON Array";
         public const string Language = "Language";
         public const string LastName = "Last Name";
         public const string Latitude = "Latitude";
+        public const string LinkedInSkill = "LinkedIn Skill";
         public const string Longitude = "Longitude";
         public const string MacAddress = "MAC Address";
         public const string MimeType = "MIME Type";
         public const string Money = "Money";
         public const string MongoDbObjectId = "MongoDB ObjectID";
+        public const string NaughtyString = "Naughty String";
         public const string NormalDistribution = "Normal Distribution";
         public const string Number = "Number";
         public const string Paragraphs = "Paragraphs";
         public const string Password = "Password";
         public const string Phone = "Phone";
+        public const string PoissonDistribution = "Poisson Distribution";
         public const string PostalCode = "Postal Code";
         public const string Race = "Race";
         public const string RegularExpression = "Regular Expression";
@@ -70,8 +80,11 @@
         public const string Scenario = "Scenario";
         public const string Sentences = "Sentences";
         public const string Sequence = "Sequence";
+        public const string SHA1 = "SHA1";
+        public const string SHA256 = "SHA256";
         public const string ShirtSize = "Shirt Size";
         public const string ShortHexColor = "Short Hex Color";
+        public const string SqlExpression = "SQL Expression";
         public const string SSN = "SSN";
         public const string State = "State";
         public const string StateAbbreviated = "State (abbrev)";

@@ -3,7 +3,8 @@ using System.ComponentModel;
 namespace NMockaroo.Attributes
 {
     /// <summary>
-    ///     Represents the Mockaroo Paragraphs type
+    /// Represents the Mockaroo Paragraphs type.
+    /// <see cref="http://mockaroo.com/api/docs#type_paragraphs" />
     /// </summary>
     public class MockarooParagraphsAttribute : MockarooInfoAttribute
     {

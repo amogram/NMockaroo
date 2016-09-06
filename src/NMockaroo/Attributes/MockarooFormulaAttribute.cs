@@ -3,9 +3,8 @@ using System.ComponentModel;
 namespace NMockaroo.Attributes
 {
     /// <summary>
-    ///     Represents the Mockaroo Formula type
-    ///     See <a href="https://www.mockaroo.com/api/docs#type_formula">here</a> for details
-    ///     
+    /// Represents the Mockaroo Formula type
+    /// <see cref="http://www.mockaroo.com/api/docs#type_formula" />
     /// </summary>
     public class MockarooFormulaAttribute : MockarooInfoAttribute
     {

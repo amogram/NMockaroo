@@ -9,7 +9,7 @@ namespace NMockaroo.Attributes
         ///     The name of the field. When using json format, you can use "."
         ///     in field names to generate nested json objects, brackets to
         ///     generate arrays.
-        ///     See more at <a href="https://www.mockaroo.com/help/json">here</a>
+        ///     <see cref="https://www.mockaroo.com/help/json" />
         /// </summary>
         public string Name { get; set; }
 
@@ -24,5 +24,11 @@ namespace NMockaroo.Attributes
         ///     One of Mockaroo's 86 data types.
         /// </summary>
         public virtual string Type { get; set; }
+
+        /// <summary>
+        /// Alters the generated value using Mockaroo formula syntax.
+        /// Use 'this' to refer to the value of this field.
+        /// </summary>
+        public string Formula { get; set; }
     }
 }

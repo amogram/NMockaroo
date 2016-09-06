@@ -3,7 +3,8 @@ using System.ComponentModel;
 namespace NMockaroo.Attributes
 {
     /// <summary>
-    ///     Represents the Mockaroo Date type
+    /// Represents the Mockaroo Date type.
+    /// <see cref="http://mockaroo.com/api/docs#type_date" />
     /// </summary>
     public class MockarooDateAttribute : MockarooInfoAttribute
     {

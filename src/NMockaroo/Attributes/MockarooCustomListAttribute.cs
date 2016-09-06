@@ -3,7 +3,8 @@ using System.ComponentModel;
 namespace NMockaroo.Attributes
 {
     /// <summary>
-    ///     Represents the Mockaroo Custom List
+    /// Represents the Mockaroo Custom List.
+    /// <see cref="http://mockaroo.com/api/docs#type_custom_list" />
     /// </summary>
     public class MockarooCustomListAttribute : MockarooInfoAttribute
     {
@@ -13,9 +14,17 @@ namespace NMockaroo.Attributes
         public string[] Values { get; set; }
 
         /// <summary>
-        ///     "random" or "sequential"
+        /// "random", "sequential", "custom", or "cartesian"
         /// </summary>
         [DefaultValue("random")]
         public string SelectionStyle { get; set; }
+    }
+
+    public class SelectionStyles
+    {
+        public const string Random = "random";
+        public const string Sequential = "sequential";
+        public const string Custom = "custom";
+        public const string Cartesian = "cartesian";
     }
 }

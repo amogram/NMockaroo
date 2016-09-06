@@ -3,7 +3,8 @@ using System.ComponentModel;
 namespace NMockaroo.Attributes
 {
     /// <summary>
-    ///     Represents the Mockaroo Dataset column
+    /// Represents the Mockaroo Dataset column.
+    /// <see cref="http://mockaroo.com/api/docs#type_dataset_column" />
     /// </summary>
     public class MockarooDatasetColumnAttribute : MockarooInfoAttribute
     {
@@ -18,7 +19,7 @@ namespace NMockaroo.Attributes
         public string Column { get; set; }
 
         /// <summary>
-        ///     "random" or "sequential"
+        ///     "random", "sequential", "custom", or "cartesian"
         /// </summary>
         [DefaultValue("random")]
         public string SelectionStyle { get; set; }

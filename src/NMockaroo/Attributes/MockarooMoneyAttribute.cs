@@ -3,7 +3,8 @@ using System.ComponentModel;
 namespace NMockaroo.Attributes
 {
     /// <summary>
-    ///     Represents the Mockaroo Money type
+    /// Represents the Mockaroo Money type.
+    /// <see cref="http://mockaroo.com/api/docs#type_money" />
     /// </summary>
     public class MockarooMoneyAttribute : MockarooInfoAttribute
     {

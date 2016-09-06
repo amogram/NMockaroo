@@ -3,7 +3,8 @@ using System.ComponentModel;
 namespace NMockaroo.Attributes
 {
     /// <summary>
-    ///     Represents the Mockaroo Sequence type
+    /// Represents the Mockaroo Sequence type.
+    /// <see cref="http://mockaroo.com/api/docs#type_sequence"/>
     /// </summary>
     public class MockarooSequenceAttribute : MockarooInfoAttribute
     {

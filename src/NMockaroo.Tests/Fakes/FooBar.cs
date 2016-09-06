@@ -6,7 +6,6 @@ namespace NMockaroo.Tests.Fakes
     public class FooBar
     {
         [MockarooCustomList(
-            Name = "Town",
             PercentBlank = 0,
             Type = DataTypes.CustomList,
             Values = new[] { "Ballymena", "Holywood", "Belfast", "Portrush" })]
@@ -15,7 +14,7 @@ namespace NMockaroo.Tests.Fakes
         [MockarooInfo(Name = "FirstName", Type = DataTypes.FirstName)]
         public string FirstName { get; set; }
 
-        [MockarooInfo(Name = "LastName", Type = DataTypes.LastName)]
+        [MockarooInfo(Type = DataTypes.LastName)]
         public string LastName { get; set; }
 
         [MockarooDate(Name = "DateOfBirth", Min = "01/01/1970", Max = "05/04/2014", Type = DataTypes.Date)]
@@ -25,7 +24,7 @@ namespace NMockaroo.Tests.Fakes
             Name = "Soup",
             PercentBlank = 0,
             Type = DataTypes.CustomList,
-            Values = new[] {"Cream of Tomato", "Potato \"and\" Leek", "Beef/Pork & Orange", "Chicken (Special Edition)", "Cock O'Leekie"},
+            Values = new[] { "Cream of Tomato", "Potato 'and' Leek", "Beef/Pork & Orange", "Chicken (Special Edition)", "Cock O'Leekie" },
             SelectionStyle = "sequential")]
         public string Soup { get; set; }
     }

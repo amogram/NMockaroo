@@ -3,7 +3,8 @@ using System.ComponentModel;
 namespace NMockaroo.Attributes
 {
     /// <summary>
-    ///     Represents the Mockaroo Sentences type
+    /// Represents the Mockaroo Sentences type.
+    /// <see cref="http://mockaroo.com/api/docs#type_sentences"/>
     /// </summary>
     public class MockarooSentencesAttribute : MockarooInfoAttribute
     {

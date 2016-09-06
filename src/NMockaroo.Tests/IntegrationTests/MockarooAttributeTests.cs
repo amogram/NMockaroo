@@ -22,7 +22,8 @@ namespace NMockaroo.Tests.IntegrationTests
             
             fooBars.ForEach(foobar =>
             {
-                Assert.IsNotNullOrEmpty(foobar.FirstName);                
+                Assert.IsNotEmpty(foobar.FirstName);
+                Assert.IsNotEmpty(foobar.Town);
             });
         }
 
@@ -54,7 +55,7 @@ namespace NMockaroo.Tests.IntegrationTests
         {
             var mockaroo = new MockarooClient(_apiKey);
             var fooBars = mockaroo.GetData<FooBar>(10).ToList();
-            string[] values = { "Cream of Tomato", "Potato \"and\" Leek", "Beef/Pork & Orange", "Chicken (Special Edition)", "Cock O'Leekie" };
+            string[] values = { "Cream of Tomato", "Potato 'and' Leek", "Beef/Pork & Orange", "Chicken (Special Edition)", "Cock O'Leekie" };
 
             fooBars.ForEach(foo =>
             {
@@ -185,7 +186,7 @@ namespace NMockaroo.Tests.IntegrationTests
 
             fooTimes.ForEach(fooTime =>
             {
-                Assert.IsNotNullOrEmpty(fooTime.LoginTime.TimeOfDay.ToString());
+                Assert.IsNotEmpty(fooTime.LoginTime.TimeOfDay.ToString());
             });
         }
 
@@ -214,6 +215,42 @@ namespace NMockaroo.Tests.IntegrationTests
                 var words = fooWord.Description.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
                 Assert.LessOrEqual(words.Count(), 15);
                 Assert.GreaterOrEqual(words.Count(), 5);
+            });
+        }
+
+        [Test]
+        public void GetData_ReturnsValidAvatarImage()
+        {
+            var mockaroo = new MockarooClient(_apiKey);
+            var fooAvatars = mockaroo.GetData<FooAvatar>(5).ToList();
+
+            fooAvatars.ForEach(fooAvatar =>
+            {
+                Assert.IsNotEmpty(fooAvatar.Avatar);
+            });
+        }
+
+        [Test]
+        public void GetData_ReturnsValidDummyImageUrl()
+        {
+            var mockaroo = new MockarooClient(_apiKey);
+            var fooWords = mockaroo.GetData<FooDummyImage>(5).ToList();
+
+            fooWords.ForEach(dummyImage =>
+            {
+                Assert.IsNotEmpty(dummyImage.FooDummyImageUrl);
+            });
+        }
+
+        [Test]
+        public void GetData_ReturnsValidPoissonDistribution()
+        {
+            var mockaroo = new MockarooClient(_apiKey);
+            var fooPoissons = mockaroo.GetData<FooPoissonDistribution>(10).ToList();
+
+            fooPoissons.ForEach(fooPoisson =>
+            {
+                Assert.IsNotEmpty(fooPoisson.Figures);
             });
         }
     }
