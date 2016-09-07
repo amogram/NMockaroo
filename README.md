@@ -33,17 +33,16 @@ Use the library of attributes in NMockaroo to define your Person Schema in Mocka
 ```
 public class Person
 {
-	[MockarooInfo(Name = "FirstName", Type = DataTypes.FirstName)]
+	[MockarooInfo(Type = DataTypes.FirstName)]
 	public string FirstName { get; set; }
 
-	[MockarooInfo(Name = "LastName", Type = DataTypes.LastName)]
+	[MockarooInfo(Type = DataTypes.LastName)]
 	public string LastName { get; set; }
 
-	[MockarooInfo(Name = "Email", Type = DataTypes.EmailAddress, PercentBlank = 40)]
+	[MockarooInfo(Type = DataTypes.EmailAddress, PercentBlank = 40)]
 	public string Email { get; set; }
 
 	[MockarooCustomList(
-		Name = "Role",
 		PercentBlank = 0,
 		Type = DataTypes.CustomList,
 		Values = new[] { "Super User", "Administrator", "Manager", "Employee" },
