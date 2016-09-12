@@ -8,10 +8,13 @@
     <projectUrl>https://github.com/amogram/NMockaroo</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>NMockaroo is a little library that provides an easy way for you to generate mock data based on your C# objects using the Mockaroo API.</description>
-    <copyright>Copyright 2015 Andrew McCaughan</copyright>
+    <copyright>Copyright 2016 Andrew McCaughan</copyright>
     <tags>mockaroo mock nmockaroo</tags>
   </metadata>
   <files>
-     <file src="bin\Release\NMockaroo.dll" target="lib\net40\" />
+	<file src="bin\net45\NMockaroo.dll" target="lib\net45" />
+	<file src="bin\net45\NMockaroo.dll" target="lib\net451" />
+	<file src="bin\net46\NMockaroo.dll" target="lib\net46" />	
+	<file src="bin\net461\NMockaroo.dll" target="lib\net461" />
   </files>
 </package>
