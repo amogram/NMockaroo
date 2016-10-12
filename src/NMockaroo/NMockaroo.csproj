@@ -22,6 +22,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -70,7 +72,7 @@
     <ErrorReport>prompt</ErrorReport>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>    
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'net461|AnyCPU'">
     <OutputPath>bin\net461\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -80,7 +82,7 @@
     <ErrorReport>prompt</ErrorReport>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>  
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'net46|AnyCPU'">
     <OutputPath>bin\net46\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -90,7 +92,10 @@
     <ErrorReport>prompt</ErrorReport>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>    
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -155,11 +160,6 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
-  <ItemGroup>
-    <ProjectToBuild Include="Amogram.Common.DateTime.csproj">
-      <Properties>Configuration=Release;OutputPath=bin\Release\net45\;IntermediateOutputPath=obj\net45\;UseNet45=true;</Properties>
-    </ProjectToBuild>
-  </ItemGroup>  
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using NMockaroo.Attributes;
 using NMockaroo.Exceptions;
 
 namespace NMockaroo
@@ -142,23 +143,13 @@ namespace NMockaroo
 
         private IEnumerable<Dictionary<string, object>> GetFields<T>()
         {
-            var fields = typeof(T).GetProperties();
+            var fields = typeof(T).GetProperties().Where(p => Attribute.IsDefined(p, typeof(MockarooInfoAttribute)));
             return fields.Select(GetFieldMetadata);
         }
 
         private static Dictionary<string, object> GetFieldMetadata(PropertyInfo field)
         {
-            if (!field.CustomAttributes.Any())
-            {
-                return null;
-            }
-
             var customAttributeData = field.GetCustomAttributesData().ToArray();
-
-            if (!customAttributeData.Any())
-            {
-                return null;
-            }
 
             Dictionary<string, object> fieldData = null;
 

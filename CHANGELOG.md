@@ -5,8 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project attempts to adhere to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-### Added
-- Nothing yet.
+### Fixed
+- [Issue #5](https://github.com/amogram/NMockaroo/issues/5) - Properties and objects that don't have Mockaroo attributes were not being ignored.  Also picked up another issue that non-Mockaroo attributes were not being ignore.
 
 ## [1.0.0] - 2016-09-06
 ### Added

@@ -36,11 +36,12 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,6 +57,7 @@
     <Compile Include="Fakes\FooBar.cs" />
     <Compile Include="Fakes\FooInfoFormula.cs" />
     <Compile Include="Fakes\FooMoney.cs" />
+    <Compile Include="Fakes\FooNestedObject.cs" />
     <Compile Include="Fakes\FooNumbers.cs" />
     <Compile Include="Fakes\FooSchema.cs" />
     <Compile Include="Fakes\FooPoissonDistribution.cs" />

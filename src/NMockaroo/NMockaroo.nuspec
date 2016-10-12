@@ -9,7 +9,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>NMockaroo is a little library that provides an easy way for you to generate mock data based on your C# objects using the Mockaroo API.</description>
     <copyright>Copyright 2016 Andrew McCaughan</copyright>
-    <tags>mockaroo mock nmockaroo</tags>
+    <tags>mockaroo mock nmockaroo sample data api</tags>
   </metadata>
   <files>
 	<file src="bin\net45\NMockaroo.dll" target="lib\net45" />

@@ -253,5 +253,20 @@ namespace NMockaroo.Tests.IntegrationTests
                 Assert.IsNotEmpty(fooPoisson.Figures);
             });
         }
+
+        [Test]
+        public void GetData_ReturnsPropertiesOnlyDecoratedWithMockarooAttribute()
+        {
+            var mockaroo = new MockarooClient(_apiKey);
+            var fooNestedObjects = mockaroo.GetData<FooNestedObject>(10).ToList();
+
+            fooNestedObjects.ForEach(fooNestedObject =>
+            {
+                Assert.IsNotNull(fooNestedObject.Id);
+                Assert.IsNull(fooNestedObject.Details);
+                Assert.IsNull(fooNestedObject.ObjectWithAnotherAttribute);
+                Assert.IsNotNull(fooNestedObject.Url);
+            });
+        }
     }
 }
