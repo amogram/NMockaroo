@@ -9,7 +9,7 @@ Nothing yet
 
 ## [1.0.0.57] - 2016-10-16
 ### Fixed
-- [Issue #5](https://github.com/amogram/NMockaroo/issues/5) - Properties and objects that don't have Mockaroo attributes were not being ignored.  Also picked up another issue that non-Mockaroo attributes were not being ignore.
+- [Issue #5](https://github.com/amogram/NMockaroo/issues/5) - Properties and objects that don't have Mockaroo attributes were not being ignored.  Also picked up another issue that non-Mockaroo attributes were not being ignored.
 
 ### Changed
 - Updated dependencies on NUnit.
