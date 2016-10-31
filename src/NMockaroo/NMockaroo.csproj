@@ -116,10 +116,13 @@
     <Compile Include="Attributes\MockarooAvatarAttribute.cs" />
     <Compile Include="Attributes\MockarooCountryAttribute.cs" />
     <Compile Include="Attributes\MockarooDummyImageUrl.cs" />
+    <Compile Include="Attributes\MockarooExponentialDistributionAttribute.cs" />
     <Compile Include="Attributes\MockarooFormulaAttribute.cs" />
     <Compile Include="Attributes\MockarooCustomListAttribute.cs" />
     <Compile Include="Attributes\MockarooDatasetColumnAttribute.cs" />
     <Compile Include="Attributes\MockarooDateAttribute.cs" />
+    <Compile Include="Attributes\MockarooBinomialDistributionAttribute.cs" />
+    <Compile Include="Attributes\MockarooGeometricDistributionAttribute.cs" />
     <Compile Include="Attributes\MockarooInfoAttribute.cs" />
     <Compile Include="Attributes\MockarooJsonArrayAttribute.cs" />
     <Compile Include="Attributes\MockarooMoneyAttribute.cs" />
