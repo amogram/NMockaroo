@@ -255,6 +255,32 @@ namespace NMockaroo.Tests.IntegrationTests
         }
 
         [Test]
+        public void GetData_ReturnsValidUniversityInformation()
+        {
+            var mockaroo = new MockarooClient(_apiKey);
+            var fooUniversities = mockaroo.GetData<FooUniversity>(10).ToList();
+
+            fooUniversities.ForEach(fooUniversity =>
+            {
+                Assert.IsNotEmpty(fooUniversity.StudentName);
+                Assert.IsNotEmpty(fooUniversity.University);
+            });
+        }
+
+        [Test]
+        public void GetData_ReturnsValidRetailDepartments()
+        {
+            var mockaroo = new MockarooClient(_apiKey);
+            var fooDepartments = mockaroo.GetData<FooDepartments>(10).ToList();
+
+            fooDepartments.ForEach(fooDepartment =>
+            {
+                Assert.IsNotEmpty(fooDepartment.RetailName);
+                Assert.IsNotEmpty(fooDepartment.CorporateName);
+            });
+        }
+
+        [Test]
         public void GetData_ReturnsPropertiesOnlyDecoratedWithMockarooAttribute()
         {
             var mockaroo = new MockarooClient(_apiKey);
@@ -269,4 +295,6 @@ namespace NMockaroo.Tests.IntegrationTests
             });
         }
     }
+
+
 }

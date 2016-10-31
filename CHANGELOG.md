@@ -5,7 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project attempts to adhere to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-Nothing yet
+### Added 
+- Support for new datatypes: University, Department (Retail), Department (Corporate), geomatric, binomial and exponential distributions, and ICD10 diagnosis and procedure codes. 
 
 ## [1.0.0.57] - 2016-10-16
 ### Fixed

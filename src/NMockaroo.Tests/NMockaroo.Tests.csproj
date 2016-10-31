@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fakes\FooAvatar.cs" />
+    <Compile Include="Fakes\FooDepartments.cs" />
     <Compile Include="Fakes\FooDummyImage.cs" />
     <Compile Include="Fakes\FooFormula.cs" />
     <Compile Include="Fakes\FooBar.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Fakes\FooNumbers.cs" />
     <Compile Include="Fakes\FooSchema.cs" />
     <Compile Include="Fakes\FooPoissonDistribution.cs" />
+    <Compile Include="Fakes\FooUniversity.cs" />
     <Compile Include="Fakes\FooWebsite.cs" />
     <Compile Include="Fakes\FooDist.cs" />
     <Compile Include="Fakes\FooSentences.cs" />
