@@ -143,7 +143,7 @@ namespace NMockaroo
 
         private IEnumerable<Dictionary<string, object>> GetFields<T>()
         {
-            var fields = typeof(T).GetProperties().Where(p => Attribute.IsDefined(p, typeof(MockarooInfoAttribute)));
+            var fields = typeof(T).GetProperties().Where(p => Attribute.IsDefined(p, typeof(MockarooAttribute)));
             return fields.Select(GetFieldMetadata);
         }
 

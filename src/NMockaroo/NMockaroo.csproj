@@ -113,6 +113,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\MockarooAttribute.cs" />
     <Compile Include="Attributes\MockarooAvatarAttribute.cs" />
     <Compile Include="Attributes\MockarooCountryAttribute.cs" />
     <Compile Include="Attributes\MockarooDummyImageUrl.cs" />
@@ -136,6 +137,9 @@
     <Compile Include="Attributes\MockArooUrlAttribute.cs" />
     <Compile Include="Attributes\MockarooWordsAttribute.cs" />
     <Compile Include="DataTypes.cs" />
+    <Compile Include="DataTypes\MockarooCustomList.cs" />
+    <Compile Include="DataTypes\MockarooDate.cs" />
+    <Compile Include="DataTypes\MockarooInfo.cs" />
     <Compile Include="Exceptions\MockarooExceptions.cs" />
     <Compile Include="DataTypes\IDataType.cs" />
     <Compile Include="IField.cs" />
