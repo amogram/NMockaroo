@@ -18,7 +18,7 @@ PM> Install-Package NMockaroo
 
 Suppose you have a Person object like this:
 
-```
+```csharp
 public class Person
 {
     public string FirstName { get; set; }
@@ -30,7 +30,7 @@ public class Person
 
 Use the library of attributes in NMockaroo to define your Person Schema in Mockaroo:
 
-```
+```csharp
 public class Person
 {
 	[MockarooInfo(Type = DataTypes.FirstName)]
@@ -53,7 +53,7 @@ public class Person
 
 Then use MockarooClient to generate your mock data:
 
-```
+```csharp
 var client = new MockarooClient(YOUR_API_KEY);
 var people = client.GetData<Person>(10).ToArray();
 ```
@@ -65,7 +65,7 @@ Easy peasy.
 
 From version 1.0.0, NMockaroo has web proxy support.  When instantiating your MockarooClient object, you can declare your WebProxy details as follows:
 
-```
+```csharp
 var client = new MockarooClient(YOUR_API_KEY)
 {
 	Proxy = new WebProxy
