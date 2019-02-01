@@ -100,3 +100,5 @@ Copyright © 2016 Andrew McCaughan and other contributors.
 
 Distributed under the [MIT License](http://en.wikipedia.org/wiki/MIT_License).
 
+[![](https://codescene.io/projects/4049/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/4049/jobs/latest-successful/results)
+
