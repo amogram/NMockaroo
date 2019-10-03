@@ -20,11 +20,11 @@ namespace NMockaroo.Attributes
         public string SelectionStyle { get; set; }
     }
 
-    public class SelectionStyles
+    public static class SelectionStyles
     {
-        public const string Random = "random";
-        public const string Sequential = "sequential";
-        public const string Custom = "custom";
-        public const string Cartesian = "cartesian";
+        public static readonly string Random = "random";
+        public static readonly string Sequential = "sequential";
+        public static readonly string Custom = "custom";
+        public static readonly string Cartesian = "cartesian";
     }
 }

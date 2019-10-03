@@ -19,8 +19,8 @@ namespace NMockaroo
     /// </summary>
     public class MockarooClient
     {
-        private const string MockarooApiUrl = @"http://www.mockaroo.com/api/generate.json?key={0}&count={1}";
-        private const string MockarooSchemaApiUrl = @"http://www.mockaroo.com/api/generate.json?key={0}&count={1}&schema={2}";
+        private const string MockarooApiUrl = @"https://www.mockaroo.com/api/generate.json?key={0}&count={1}";
+        private const string MockarooSchemaApiUrl = @"https://www.mockaroo.com/api/generate.json?key={0}&count={1}&schema={2}";
 
         private readonly string _apiKey;
 
