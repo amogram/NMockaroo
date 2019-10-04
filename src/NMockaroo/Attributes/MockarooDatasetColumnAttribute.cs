@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Dataset column.
-    /// <see cref="http://mockaroo.com/api/docs#type_dataset_column" />
+    /// <see cref="https://mockaroo.com/api/docs#type_dataset_column" />
     /// </summary>
     public class MockarooDatasetColumnAttribute : MockarooInfoAttribute
     {

@@ -15,7 +15,7 @@ namespace NMockaroo
 {
     /// <summary>
     /// A client for the Mockaroo API.  
-    /// <see cref="http://www.mockaroo.com/api/docs" />
+    /// <see cref="https://www.mockaroo.com/api/docs" />
     /// </summary>
     public class MockarooClient
     {

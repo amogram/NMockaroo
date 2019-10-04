@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Custom List.
-    /// <see cref="http://mockaroo.com/api/docs#type_custom_list" />
+    /// <see cref="https://mockaroo.com/api/docs#type_custom_list" />
     /// </summary>
     public class MockarooCustomListAttribute : MockarooInfoAttribute
     {

@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Formula type
-    /// <see cref="http://www.mockaroo.com/api/docs#type_formula" />
+    /// <see cref="https://www.mockaroo.com/api/docs#type_formula" />
     /// </summary>
     public class MockarooFormulaAttribute : MockarooInfoAttribute
     {

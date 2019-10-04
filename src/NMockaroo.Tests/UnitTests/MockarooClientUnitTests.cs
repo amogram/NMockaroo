@@ -7,22 +7,19 @@ using NUnit.Framework;
 namespace NMockaroo.Tests.UnitTests
 {
     [TestFixture]
-    internal class MockarooClientUnitTests
+    internal class MockarooClientUnitTests : ConfiguredFixture
     {
-        public string ApiKey { get; set; }
-        public int NumberOfInstances { get; set; }
+        private int _numberOfInstances;
 
         [OneTimeSetUp]
         public void Init()
         {
-            ApiKey = ConfigurationManager.AppSettings["MockarooApiKey"];
-            NumberOfInstances = 1;
+            _numberOfInstances = 1;
         }
-
+        
         [Test]
         public void NoApiKey_ThrowsNullException()
         {
-            // ReSharper disable once ObjectCreationAsStatement
             Assert.Throws<ArgumentNullException>(() => new MockarooClient(null));
         }
 
@@ -30,16 +27,16 @@ namespace NMockaroo.Tests.UnitTests
         public void MockarooClient_WhenValidKey_ReturnsData()
         {
             var client = new MockarooClient(ApiKey);
-            var foo = client.GetData<FooBar>(NumberOfInstances);
-            Assert.IsTrue(foo.Count() == NumberOfInstances);
+            var foo = client.GetData<FooBar>(_numberOfInstances);
+            Assert.IsTrue(foo.Count() == _numberOfInstances);
         }
 
         [Test]
         public void MockarooClient_WhenSchemaNameIsRequested_ReturnsSchemaData()
         {
             var client = new MockarooClient(ApiKey);
-            var foo = client.GetSchemaData<FooSchema>(NumberOfInstances, "UnitTest");
-            Assert.IsTrue(foo.Count() == NumberOfInstances);
+            var foo = client.GetSchemaData<FooSchema>(_numberOfInstances, "UnitTest");
+            Assert.IsTrue(foo.Count() == _numberOfInstances);
         }
     }
 }

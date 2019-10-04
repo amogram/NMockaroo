@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// Represents the Dummy Image Url Datatype.
-    /// <see cref="http://mockaroo.com/api/docs#type_dummy_image_url" />
+    /// <see cref="https://mockaroo.com/api/docs#type_dummy_image_url" />
     /// </summary>
     public class MockarooDummyImageUrlAttribute : MockarooInfoAttribute
     {

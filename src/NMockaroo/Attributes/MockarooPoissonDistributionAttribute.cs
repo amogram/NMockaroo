@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// Represents the Poisson Distribution Datatype.
-    /// <see cref="http://mockaroo.com/api/docs#type_poisson_distribution" /> 
+    /// <see cref="https://mockaroo.com/api/docs#type_poisson_distribution" /> 
     /// </summary>
     public class MockarooPoissonDistributionAttribute : MockarooInfoAttribute
     {

@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Paragraphs type.
-    /// <see cref="http://mockaroo.com/api/docs#type_paragraphs" />
+    /// <see cref="https://mockaroo.com/api/docs#type_paragraphs" />
     /// </summary>
     public class MockarooParagraphsAttribute : MockarooInfoAttribute
     {

@@ -8,7 +8,7 @@ namespace NMockaroo.Tests.Fakes
         [MockarooInfo(Type = DataTypes.Guid)]
         public string Id { get; set; }
 
-        [MockArooUrl(IncludeHost = true, IncludePath = false, IncludeProtocol = true,
+        [MockarooUrl(IncludeHost = true, IncludePath = false, IncludeProtocol = true,
             IncludeQueryString = false, Type = DataTypes.Url)]
         public string Url { get; set; }
 

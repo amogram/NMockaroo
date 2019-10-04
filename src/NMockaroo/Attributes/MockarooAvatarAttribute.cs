@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// Represents the Avatar Datatype.
-    /// <see cref="http://mockaroo.com/api/docs#type_avatar" />
+    /// <see cref="https://mockaroo.com/api/docs#type_avatar" />
     /// </summary>
     public class MockarooAvatarAttribute : MockarooInfoAttribute
     {

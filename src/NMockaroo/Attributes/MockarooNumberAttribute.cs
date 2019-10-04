@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Number type.
-    /// See <a href="http://mockaroo.com/api/docs#type_number">here</a> 
+    /// See <a href="https://mockaroo.com/api/docs#type_number">here</a> 
     /// for more information.
     /// </summary>
     public class MockarooNumberAttribute : MockarooInfoAttribute

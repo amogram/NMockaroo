@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Sequence type.
-    /// <see cref="http://mockaroo.com/api/docs#type_sequence"/>
+    /// <see cref="https://mockaroo.com/api/docs#type_sequence"/>
     /// </summary>
     public class MockarooSequenceAttribute : MockarooInfoAttribute
     {

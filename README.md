@@ -89,7 +89,7 @@ NMockaroo is a single assembly designed to be easy to deploy anywhere.  If you p
 
 NMockaroo is hosted [on GitHub](https://github.com/amogram/nmockaroo).  If you find a bug, please visit the issue tracker and report the issue.
 
-Feel free to submit a pull request containing any improvemenets, bug fixes or new features. 
+Feel free to submit a pull request containing any improvements, bug fixes or new features. 
 
 
 P.S. A huge thanks to [Mockaroo](https://mockaroo.com), without which this library would not exist.

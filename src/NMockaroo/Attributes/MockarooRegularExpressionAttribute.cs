@@ -2,7 +2,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Regular Expression type.
-    /// <see cref="http://mockaroo.com/api/docs#type_regular_expression" />
+    /// <see cref="https://mockaroo.com/api/docs#type_regular_expression" />
     /// <seealso cref="https://github.com/benburkert/randexp" />
     /// </summary>
     public class MockarooRegularExpressionAttribute : MockarooInfoAttribute

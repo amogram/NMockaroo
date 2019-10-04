@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Words type.
-    /// <see cref="http://mockaroo.com/api/docs#type_words"/>
+    /// <see cref="https://mockaroo.com/api/docs#type_words"/>
     /// </summary>
     public class MockarooWordsAttribute : MockarooInfoAttribute
     {

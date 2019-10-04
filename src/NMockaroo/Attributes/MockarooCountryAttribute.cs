@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// Represents the Country Data type. 
-    /// <see cref="http://mockaroo.com/api/docs#type_country" />
+    /// <see cref="https://mockaroo.com/api/docs#type_country" />
     /// </summary>
     public class MockarooCountryAttribute
     {

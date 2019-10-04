@@ -4,9 +4,9 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Url type
-    /// <see cref="http://mockaroo.com/api/docs#type_url"/>
+    /// <see cref="https://mockaroo.com/api/docs#type_url"/>
     /// </summary>
-    public class MockArooUrlAttribute : MockarooInfoAttribute
+    public class MockarooUrlAttribute : MockarooInfoAttribute
     {
         /// <summary>
         ///     True to include a protocol in the url.

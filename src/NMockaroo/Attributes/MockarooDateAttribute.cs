@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Date type.
-    /// <see cref="http://mockaroo.com/api/docs#type_date" />
+    /// <see cref="https://mockaroo.com/api/docs#type_date" />
     /// </summary>
     public class MockarooDateAttribute : MockarooInfoAttribute
     {
@@ -25,7 +25,7 @@ namespace NMockaroo.Attributes
         /// <summary>
         ///     (optional) The format to output. This can be any format directive
         ///     supported by ruby Time.strftime. Defaults to
-        ///     <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>.
+        ///     <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>.
         ///     Example value: "2007-11-19T08:37:48-06:00".
         /// </summary>
         [DefaultValue("%FT%T%:z")]

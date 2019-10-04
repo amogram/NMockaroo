@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Money type.
-    /// <see cref="http://mockaroo.com/api/docs#type_money" />
+    /// <see cref="https://mockaroo.com/api/docs#type_money" />
     /// </summary>
     public class MockarooMoneyAttribute : MockarooInfoAttribute
     {
@@ -21,7 +21,7 @@ namespace NMockaroo.Attributes
         public int Max { get; set; }
 
         /// <summary>
-        ///     One the following: $, £, €, ¥, random, none
+        ///     One the following: $, ï¿½, ï¿½, ï¿½, random, none
         /// </summary>
         [DefaultValue("$")]
         public string Symbol { get; set; }

@@ -4,8 +4,8 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Json Array Datatype
-    /// <see cref="http://mockaroo.com/api/docs#type_json_array" />
-    /// <seealso cref="http://mockaroo.com/help/json_arrays" />
+    /// <see cref="https://mockaroo.com/api/docs#type_json_array" />
+    /// <seealso cref="https://mockaroo.com/help/json_arrays" />
     /// </summary>
     public class MockarooJsonArrayAttribute : MockarooInfoAttribute
     {

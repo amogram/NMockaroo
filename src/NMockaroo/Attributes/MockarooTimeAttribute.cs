@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Time type
-    /// <see cref="http://mockaroo.com/api/docs#type_time"/>
+    /// <see cref="https://mockaroo.com/api/docs#type_time"/>
     /// </summary>
     public class MockarooTimeAttribute : MockarooInfoAttribute
     {

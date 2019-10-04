@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Sentences type.
-    /// <see cref="http://mockaroo.com/api/docs#type_sentences"/>
+    /// <see cref="https://mockaroo.com/api/docs#type_sentences"/>
     /// </summary>
     public class MockarooSentencesAttribute : MockarooInfoAttribute
     {

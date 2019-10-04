@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo Normal Distribution type.
-    /// <see cref="http://mockaroo.com/api/docs#type_normal_distribution" />
+    /// <see cref="https://mockaroo.com/api/docs#type_normal_distribution" />
     /// </summary>
     public class MockarooNormalDistributionAttribute : MockarooInfoAttribute
     {

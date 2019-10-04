@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Linq;
 using System.Text.RegularExpressions;
 using NMockaroo.Tests.Fakes;
@@ -8,14 +7,12 @@ using NUnit.Framework;
 namespace NMockaroo.Tests.IntegrationTests
 {
     [TestFixture]
-    public class MockarooAttributeTests
+    public class MockarooAttributeTests : ConfiguredFixture
     {
-        private readonly string _apiKey = ConfigurationManager.AppSettings["MockarooApiKey"];
-
         [Test]
         public void GetData_ReturnsCorrectInfo()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooBars = mockaroo.GetData<FooBar>(10).ToList();
 
             Assert.AreEqual(fooBars.Count, 10);
@@ -30,7 +27,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidDateTime()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooBars = mockaroo.GetData<FooBar>(10).ToList();
             var fooBar = fooBars.First();
 
@@ -40,7 +37,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidListOfValues()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var values = new[] { "Ballymena", "Holywood", "Belfast", "Portrush" };
             var fooBars = mockaroo.GetData<FooBar>(10).ToList();
 
@@ -53,7 +50,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidListWithSpecialCharacters()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooBars = mockaroo.GetData<FooBar>(10).ToList();
             string[] values = { "Cream of Tomato", "Potato 'and' Leek", "Beef/Pork & Orange", "Chicken (Special Edition)", "Cock O'Leekie" };
 
@@ -66,7 +63,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidMoney()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooMonies = mockaroo.GetData<FooMoney>(10).ToList();
 
             fooMonies.ForEach(foo =>
@@ -78,7 +75,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidNumber()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooMonies = mockaroo.GetData<FooNumbers>(50).ToList();
 
             fooMonies.ForEach(foo =>
@@ -91,7 +88,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidNormalDistribution()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooDists = mockaroo.GetData<FooDist>(10).ToList();
 
             Assert.AreEqual(fooDists.Count, 10);
@@ -105,7 +102,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidSentences()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooSentences = mockaroo.GetData<FooSentences>(10).ToList();
 
             fooSentences.ForEach(fooSentence =>
@@ -119,7 +116,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsParagraphs()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooParagraphs = mockaroo.GetData<FooParagraphs>(10).ToList();
 
             fooParagraphs.ForEach(fooParagraph =>
@@ -133,7 +130,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsFormula()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooFormulas = mockaroo.GetData<FooFormula>(1).ToList();
 
             Assert.AreEqual(fooFormulas.Count(), 1);
@@ -143,7 +140,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsOneOrZeroItems()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooFormulas = mockaroo.GetData<FooFormula>(0).ToList();
             Assert.AreEqual(fooFormulas.Count(), 0);
             fooFormulas = mockaroo.GetData<FooFormula>(1).ToList();
@@ -155,7 +152,7 @@ namespace NMockaroo.Tests.IntegrationTests
         {
             const string regexPattern = @"Aa{3}h{3,15}!";
 
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooRegexes = mockaroo.GetData<FooRegex>(10).ToList();
 
             fooRegexes.ForEach(fooregex =>
@@ -167,7 +164,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidSequence()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooSequences = mockaroo.GetData<FooSequence>(10).ToList();
             var sequenceCount = 50;
 
@@ -181,7 +178,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidTime()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooTimes = mockaroo.GetData<FooTime>(10).ToList();
 
             fooTimes.ForEach(fooTime =>
@@ -195,7 +192,7 @@ namespace NMockaroo.Tests.IntegrationTests
         {
             const string urlRegexPattern = @"^http(s)?://([\w-]+.)+[\w-]+(/[\w- ./?%&=])?$";
 
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooSites = mockaroo.GetData<FooWebsite>(10).ToList();
 
             fooSites.ForEach(fooSite =>
@@ -207,7 +204,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidWords()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooWords = mockaroo.GetData<FooWords>(10).ToList();
 
             fooWords.ForEach(fooWord =>
@@ -221,7 +218,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidAvatarImage()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooAvatars = mockaroo.GetData<FooAvatar>(5).ToList();
 
             fooAvatars.ForEach(fooAvatar =>
@@ -233,7 +230,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidDummyImageUrl()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooWords = mockaroo.GetData<FooDummyImage>(5).ToList();
 
             fooWords.ForEach(dummyImage =>
@@ -245,7 +242,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidPoissonDistribution()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooPoissons = mockaroo.GetData<FooPoissonDistribution>(10).ToList();
 
             fooPoissons.ForEach(fooPoisson =>
@@ -257,7 +254,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidUniversityInformation()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooUniversities = mockaroo.GetData<FooUniversity>(10).ToList();
 
             fooUniversities.ForEach(fooUniversity =>
@@ -270,7 +267,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsValidRetailDepartments()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooDepartments = mockaroo.GetData<FooDepartments>(10).ToList();
 
             fooDepartments.ForEach(fooDepartment =>
@@ -283,7 +280,7 @@ namespace NMockaroo.Tests.IntegrationTests
         [Test]
         public void GetData_ReturnsPropertiesOnlyDecoratedWithMockarooAttribute()
         {
-            var mockaroo = new MockarooClient(_apiKey);
+            var mockaroo = new MockarooClient(ApiKey);
             var fooNestedObjects = mockaroo.GetData<FooNestedObject>(10).ToList();
 
             fooNestedObjects.ForEach(fooNestedObject =>

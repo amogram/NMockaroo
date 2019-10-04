@@ -4,7 +4,7 @@ namespace NMockaroo.Attributes
 {
     /// <summary>
     /// Represents the Mockaroo State type
-    /// <see cref="http://mockaroo.com/api/docs#type_state"/>
+    /// <see cref="https://mockaroo.com/api/docs#type_state"/>
     /// </summary>
     public class MockarooStateAttribute : MockarooInfoAttribute
     {
